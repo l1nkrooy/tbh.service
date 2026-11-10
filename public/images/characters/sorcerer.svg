@@ -1,0 +1,36 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sorcerer emblem">
+  <defs>
+    <linearGradient id="sorc-cloth" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8870C4" />
+      <stop offset="100%" stop-color="#3D2F66" />
+    </linearGradient>
+    <radialGradient id="sorc-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8870C4" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#8870C4" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="74" fill="url(#sorc-glow)" />
+
+  <!-- Остроконечная шляпа -->
+  <path
+    d="M100 26 L132 128 C132 128 116 138 100 138 C84 138 68 128 68 128 Z"
+    fill="url(#sorc-cloth)"
+    stroke="#1c1b22"
+    stroke-width="2"
+  />
+  <ellipse cx="100" cy="128" rx="40" ry="10" fill="#3D2F66" stroke="#1c1b22" stroke-width="2" />
+
+  <!-- Магическая руна на шляпе -->
+  <g stroke="#E0BC4A" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <circle cx="100" cy="92" r="14" />
+    <line x1="100" y1="78" x2="100" y2="106" />
+    <line x1="86" y1="92" x2="114" y2="92" />
+  </g>
+
+  <!-- Парящие искры -->
+  <circle cx="60" cy="60" r="2.5" fill="#8870C4" />
+  <circle cx="146" cy="64" r="2" fill="#E0BC4A" />
+  <circle cx="146" cy="146" r="2" fill="#8870C4" opacity="0.8" />
+  <circle cx="54" cy="142" r="1.8" fill="#E0BC4A" opacity="0.7" />
+</svg>

@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   ДИЗАЙН-ТОКЕНЫ HERO SERVICE
+   Палитра вдохновлена визуальным стилем Task Bar Hero (готическое тёмное
+   фэнтези, броня Knight, золото валюты), переосмысленным в премиальном
+   минималистичном ключе (Apple / Linear / Riot Games).
+   ============================================================================ */
+@theme {
+  /* --- Цвет --- */
+  --color-ash: #0a0a0d;          /* основной фон, почти чёрный с холодным подтоном */
+  --color-panel: #14131a;        /* поверхность карточек/панелей */
+  --color-panel-raised: #1b1a23; /* приподнятая поверхность (hover, modal) */
+  --color-line: #26242f;         /* тонкие разделители, бордеры */
+
+  --color-bone: #ebe7df;         /* основной текст, тёплый белый */
+  --color-bone-dim: #9c98a3;     /* вторичный текст */
+  --color-bone-faint: #67646f;   /* третичный текст, плейсхолдеры */
+
+  --color-blood: #9c2531;        /* основной акцент действия (CTA, кровавый щит Knight) */
+  --color-blood-bright: #c43544; /* hover-состояние blood */
+  --color-blood-dim: #4a1620;    /* затемнённый blood для фонов */
+
+  --color-relic: #c9a227;        /* золото — валюта, премиальные акценты */
+  --color-relic-bright: #e0bc4a;
+  --color-relic-dim: #5c4a1a;
+
+  --color-arcane: #6753a3;       /* редкий акцент: магия Sorcerer */
+  --color-arcane-bright: #8870c4;
+
+  --color-sage: #4f7a52;         /* природный акцент: Ranger, success-состояния */
+
+  /* --- Типографика --- */
+  --font-display: "Press Start 2P", "Courier New", monospace;
+  --font-body: "Press Start 2P", "Courier New", monospace;
+  --font-mono: "JetBrains Mono", "Menlo", monospace;
+
+  /* --- Радиусы --- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* --- Тени --- */
+  --shadow-glow-blood: 0 0 40px -8px rgba(156, 37, 49, 0.45);
+  --shadow-glow-relic: 0 0 40px -8px rgba(201, 162, 39, 0.35);
+  --shadow-panel: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+    0 24px 48px -24px rgba(0, 0, 0, 0.6);
+
+  /* --- Easing --- */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis управляет скроллом сам */
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 0.9375rem; /* немного крупнее обычного — пиксельный шрифт
+      визуально плотнее, мелкий размер быстро становится нечитаемым */
+    line-height: 1.6; /* умеренно увеличенный интервал строк по умолчанию;
+      более точечное увеличение для длинных абзацев — через .text-pixel-loose */
+    letter-spacing: 0.01em;
+    background-color: var(--color-ash);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(156, 37, 49, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(201, 162, 39, 0.04), transparent);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.4; /* пиксельные буквы соседних строк нуждаются в чуть
+      большем воздухе, чем обычный шрифт, но без избыточного раздувания */
+    letter-spacing: 0;
+  }
+
+  p, li {
+    max-width: 64ch; /* ограничиваем длину строки — у широкого моноширинного
+      пиксельного шрифта длинные строки утомляют глаз сильнее обычного */
+    line-height: 1.75; /* параграфам и пунктам списков нужно больше
+      межстрочного интервала, чем заголовкам или UI-элементам (кнопки,
+      бейджи, лейблы), которые наследуют умеренный line-height с body */
+  }
+
+  ::selection {
+    background-color: rgba(156, 37, 49, 0.4);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-relic);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ash);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-bone-faint);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Тонкая руническая линия-разделитель — фирменный элемент сайта */
+  .ember-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-line) 20%,
+      var(--color-line) 80%,
+      transparent
+    );
+  }
+
+  .glass-panel {
+    background: rgba(20, 19, 26, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .text-gradient-relic {
+    background: linear-gradient(135deg, var(--color-relic-bright), var(--color-relic));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

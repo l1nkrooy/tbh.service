@@ -1,0 +1,41 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knight emblem">
+  <defs>
+    <linearGradient id="knight-shield" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A33636" />
+      <stop offset="100%" stop-color="#6E1F22" />
+    </linearGradient>
+    <linearGradient id="knight-steel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8D5CC" />
+      <stop offset="100%" stop-color="#8B8881" />
+    </linearGradient>
+  </defs>
+
+  <!-- Геральдический щит -->
+  <path
+    d="M100 24 L156 44 V104 C156 142 132 168 100 180 C68 168 44 142 44 104 V44 Z"
+    fill="url(#knight-shield)"
+    stroke="#1c1b22"
+    stroke-width="2"
+  />
+  <path
+    d="M100 24 L156 44 V104 C156 142 132 168 100 180 C68 168 44 142 44 104 V44 Z"
+    fill="none"
+    stroke="#D8D5CC"
+    stroke-width="3"
+    opacity="0.5"
+  />
+
+  <!-- Крест на щите -->
+  <rect x="92" y="56" width="16" height="92" fill="#D8D5CC" opacity="0.92" />
+  <rect x="58" y="90" width="84" height="16" fill="#D8D5CC" opacity="0.92" />
+
+  <!-- Меч поверх щита -->
+  <g transform="rotate(-18 100 100)">
+    <rect x="96" y="38" width="8" height="100" fill="url(#knight-steel)" rx="1" />
+    <rect x="78" y="62" width="44" height="9" rx="2" fill="#5b4a2f" />
+    <path d="M100 36 L106 50 H94 Z" fill="url(#knight-steel)" />
+  </g>
+
+  <!-- Центральный рубин -->
+  <circle cx="100" cy="100" r="7" fill="#E0454F" stroke="#1c1b22" stroke-width="1.5" />
+</svg>

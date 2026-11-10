@@ -1,0 +1,37 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hunter emblem">
+  <defs>
+    <linearGradient id="hunter-axe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8D5CC" />
+      <stop offset="100%" stop-color="#6E6B64" />
+    </linearGradient>
+    <linearGradient id="hunter-handle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A5A33" />
+      <stop offset="100%" stop-color="#5C3A1F" />
+    </linearGradient>
+  </defs>
+
+  <!-- Топор 1 -->
+  <g transform="rotate(-32 100 100)">
+    <rect x="96" y="40" width="8" height="120" rx="2" fill="url(#hunter-handle)" />
+    <path
+      d="M104 50 C140 44 156 64 150 86 C134 90 112 84 104 70 Z"
+      fill="url(#hunter-axe)"
+      stroke="#1c1b22"
+      stroke-width="2"
+    />
+  </g>
+
+  <!-- Топор 2 (зеркальный) -->
+  <g transform="rotate(32 100 100)">
+    <rect x="96" y="40" width="8" height="120" rx="2" fill="url(#hunter-handle)" />
+    <path
+      d="M96 50 C60 44 44 64 50 86 C66 90 88 84 96 70 Z"
+      fill="url(#hunter-axe)"
+      stroke="#1c1b22"
+      stroke-width="2"
+    />
+  </g>
+
+  <!-- Центральная связка -->
+  <circle cx="100" cy="100" r="9" fill="#8A5A33" stroke="#1c1b22" stroke-width="2" />
+</svg>

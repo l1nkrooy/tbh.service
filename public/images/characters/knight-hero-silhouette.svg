@@ -1,0 +1,117 @@
+<svg viewBox="0 0 480 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knight silhouette">
+  <defs>
+    <linearGradient id="hero-knight-armor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3942" />
+      <stop offset="100%" stop-color="#13121a" />
+    </linearGradient>
+    <linearGradient id="hero-knight-cape" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7a1c26" />
+      <stop offset="100%" stop-color="#2c0a0e" />
+    </linearGradient>
+    <linearGradient id="hero-knight-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c43544" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#e0bc4a" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#c43544" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="hero-knight-rim" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Плащ позади фигуры -->
+  <path
+    d="M180 220
+       C 110 260, 70 380, 90 560
+       C 100 620, 130 670, 170 700
+       L 240 660
+       L 200 540
+       C 195 440, 200 320, 230 240 Z"
+    fill="url(#hero-knight-cape)"
+    opacity="0.95"
+  />
+  <path
+    d="M300 220
+       C 370 260, 410 380, 390 560
+       C 380 620, 350 670, 310 700
+       L 240 660
+       L 280 540
+       C 285 440, 280 320, 250 240 Z"
+    fill="url(#hero-knight-cape)"
+    opacity="0.85"
+  />
+
+  <!-- Ноги -->
+  <rect x="205" y="500" width="34" height="160" rx="10" fill="url(#hero-knight-armor)" />
+  <rect x="245" y="500" width="34" height="160" rx="10" fill="url(#hero-knight-armor)" />
+  <rect x="198" y="630" width="46" height="34" rx="8" fill="#1c1b22" />
+  <rect x="240" y="630" width="46" height="34" rx="8" fill="#1c1b22" />
+
+  <!-- Торс -->
+  <path
+    d="M196 320
+       C 196 280, 220 256, 244 256
+       C 268 256, 292 280, 292 320
+       L 296 470
+       C 296 500, 270 516, 244 516
+       C 218 516, 192 500, 192 470 Z"
+    fill="url(#hero-knight-armor)"
+  />
+
+  <!-- Наплечники -->
+  <ellipse cx="186" cy="290" rx="34" ry="40" fill="url(#hero-knight-armor)" />
+  <ellipse cx="302" cy="284" rx="38" ry="44" fill="url(#hero-knight-armor)" />
+
+  <!-- Голова / шлем -->
+  <path
+    d="M214 170
+       C 214 140, 230 118, 254 118
+       C 278 118, 294 140, 294 170
+       C 294 196, 280 214, 254 218
+       C 228 214, 214 196, 214 170 Z"
+    fill="url(#hero-knight-armor)"
+  />
+  <rect x="236" y="172" width="36" height="10" rx="4" fill="#0a0a0d" />
+
+  <!-- Гребень шлема -->
+  <path
+    d="M250 118 C 246 90, 256 60, 270 40 C 266 70, 268 100, 262 122 Z"
+    fill="url(#hero-knight-cape)"
+  />
+
+  <!-- Щит (левая рука персонажа, право для зрителя) -->
+  <path
+    d="M330 320 L390 350 V430 C390 470 368 500 330 516 C292 500 270 470 270 430 V350 Z"
+    fill="url(#hero-knight-cape)"
+    stroke="#0a0a0d"
+    stroke-width="3"
+  />
+  <rect x="322" y="356" width="16" height="100" fill="#d8d5cc" opacity="0.85" />
+  <rect x="288" y="396" width="84" height="16" fill="#d8d5cc" opacity="0.85" />
+  <circle cx="330" cy="404" r="9" fill="#e0454f" />
+
+  <!-- Меч в правой руке (левая для зрителя), направлен вниз -->
+  <g transform="rotate(8 200 600)">
+    <rect x="194" y="380" width="10" height="240" rx="3" fill="#aeb0b8" />
+    <rect x="178" y="396" width="42" height="11" rx="3" fill="#5b4a2f" />
+  </g>
+
+  <!-- Контровой свет по краю силуэта (rim light) -->
+  <path
+    d="M196 320 C 196 280, 220 256, 244 256 C 268 256, 292 280, 292 320 L 296 470"
+    fill="none"
+    stroke="url(#hero-knight-edge)"
+    stroke-width="3"
+    opacity="0.8"
+  />
+  <path
+    d="M214 170 C 214 140, 230 118, 254 118 C 278 118, 294 140, 294 170"
+    fill="none"
+    stroke="url(#hero-knight-edge)"
+    stroke-width="2.5"
+    opacity="0.7"
+  />
+
+  <!-- Общий мягкий rim-overlay -->
+  <rect x="0" y="0" width="480" height="720" fill="url(#hero-knight-rim)" />
+</svg>
